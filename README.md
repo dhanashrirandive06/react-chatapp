@@ -1,3 +1,28 @@
+# React ChatApp
+
+This React Chat App is a simple React app that shows the Functionality of Chat APP.
+
+## Features
+
+- Simple and user Friendly UI
+- Create Conversations, Add Users for Conversations, Send Messages, Search Users by their names etc
+- Show Notifications, Login and Logout Functionality.
+
+## Getting Started
+
+Follow these steps to get started with the React ChatApp code:
+
+1. **Clone the Repository**: Clone this repository to your local machine using the following command:
+    git clone https://github.com/dhanashrirandive06/react-chatapp.git
+2. **Navigate to the Project Directory**: Move to the project directory:
+    cd react-chatapp
+3. **Run the Code By Following Command** :
+    - npm install
+    - npm start
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
