@@ -26,11 +26,11 @@ const users = [
         chatLog: [
           {
             send: true,
-            message: "Hi User1",
+            message: "Hi User2",
           },
           {
             send: false,
-            message: "Hi User2",
+            message: "Hi User1",
           },
           {
             send: true,

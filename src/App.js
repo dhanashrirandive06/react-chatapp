@@ -6,15 +6,14 @@ import {
   RouterProvider,
   Navigate,
 } from "react-router-dom";
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 function App() {
-  // ******** Create high-level protected route below ******** //
-  const ProtectedRoute = ({ children }) => {
-    let isLoggedIn = localStorage.getItem("user:gmail");
-    if (isLoggedIn) {
-      return <Navigate to="/" replace={true} />;
-    }
-    return children;
+  const [notify, setNotify] = useState(null);
+
+  const handleNotification = (message) => {
+    setNotify(message);
   };
 
   const router = createBrowserRouter([
@@ -24,17 +23,16 @@ function App() {
         {
           index: true,
           element: (
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
+            <Login notify={notify} handleNotification={handleNotification} />
           ),
         },
         {
-          path: "/login",
+          path: "/dashboard",
           element: (
-            <ProtectedRoute>
-              <Login />
-            </ProtectedRoute>
+            <Dashboard
+              notify={notify}
+              handleNotification={handleNotification}
+            />
           ),
         },
       ],
@@ -42,9 +40,12 @@ function App() {
   ]);
 
   return (
-    <div className="main">
-      <RouterProvider router={router} />
-    </div>
+    <>
+      <div className="main">
+        <RouterProvider router={router} />
+      </div>
+      <ToastContainer />
+    </>
   );
 }
 

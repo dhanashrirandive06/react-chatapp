@@ -107,6 +107,7 @@ function Sidebar({ currentUser, users, handleCurrentChat, setCurrentUser }) {
                   contactUser={ele}
                   imgPath={ele.image}
                   users={users}
+                  index={index}
                 />
               );
             })}

@@ -7,7 +7,7 @@ function ContactRow({
   imgPath,
   users,
   handleCurrentChat,
-  key,
+  index,
 }) {
   const [isActive, setIsActive] = useState(false);
   const contact = users.find((ele) => ele.id === contactUser.id);
@@ -18,16 +18,16 @@ function ContactRow({
   };
   return (
     <div
-      key={key}
+      key={index}
       className={`contactRow row mx-3 mt-2 py-3 ${
-        key === isActive ? "active" : ""
+        index === isActive ? "active" : ""
       }`}
       onClick={
         handleAdd
           ? () => handleAdd(contactUser)
           : () => {
               handleCurrentChat(contactUser);
-              handleIsActive(key === isActive ? null : key);
+              handleIsActive(index === isActive ? null : index);
             }
       }
     >
