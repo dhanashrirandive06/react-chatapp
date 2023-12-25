@@ -15,7 +15,9 @@ function App() {
   return (
     <>
       <div className="main">
-        <BrowserRouter>
+        <BrowserRouter
+          basename={"https://dhanashrirandive06.github.io/react-chatapp/"}
+        >
           <Routes>
             <Route
               path="/"
