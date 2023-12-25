@@ -1,0 +1,282 @@
+/* CSS for All component */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-image: linear-gradient(
+    to right bottom,
+    #000000,
+    #070104,
+    #0c0309,
+    #0f050f,
+    #100714,
+    #0f0815,
+    #0f0916,
+    #0e0a17,
+    #0d0914,
+    #0c0911,
+    #0b080e,
+    #09080a
+  );
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Main Css */
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register {
+  width: 30%;
+  background-image: linear-gradient(
+    to right bottom,
+    #000000,
+    #070104,
+    #0c0309,
+    #0f050f,
+    #100714,
+    #0f0815,
+    #0f0916,
+    #0e0a17,
+    #0d0914,
+    #0c0911,
+    #0b080e,
+    #09080a
+  );
+  color: #ffffffd6;
+}
+
+.login {
+  width: 30%;
+  background-image: linear-gradient(
+    to right bottom,
+    #000000,
+    #0c0105,
+    #14020e,
+    #180316,
+    #19061d,
+    #18081f,
+    #160920,
+    #140b22,
+    #130a1d,
+    #110918,
+    #0d0912,
+    #09080a
+  );
+  color: #ffffffd6;
+}
+
+/* Login and Register Link */
+.loginRegisterLink {
+  color: #8f99a3;
+  text-decoration: none;
+}
+
+.loginRegisterLink:hover {
+  color: white;
+}
+
+.register input {
+  background-color: #ffffffd6;
+  border: none;
+  outline: none;
+}
+
+/* dashboard Css */
+.dashboard {
+  width: 90%;
+  height: 100%;
+  background-color: #1e1f22;
+}
+
+.sidebar {
+  width: 35%;
+  height: 45rem;
+}
+
+.chat {
+  width: 65%;
+  background-color: #2b2d31;
+}
+
+.profileRow {
+  border-bottom: #8f99a376 0.01px solid;
+}
+
+.quote {
+  display: inline-block;
+  color: #8f99a3;
+  width: 8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9rem;
+}
+
+.name {
+  margin-bottom: 0.3rem;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: #6e3aff;
+}
+
+.addUser {
+  color: #8f99a3;
+}
+
+.search {
+  background-color: #8f99a31f;
+  border-radius: 0.5rem;
+}
+
+.searchInputBar {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+/* contact */
+.contacts {
+  position: relative;
+  height: 75%;
+  overflow-y: scroll;
+}
+
+.contacts:hover::-webkit-scrollbar {
+  display: block;
+  border: none;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0.2rem;
+  color: rgb(170, 164, 164);
+  border: none;
+  outline: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 2px 1px #888;
+  border: none;
+  outline: none;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.contactRow {
+  cursor: pointer;
+}
+
+.contactRow:hover {
+  background-color: #8f99a31f;
+  border-radius: 0.5rem;
+}
+
+.active {
+  background-color: #8f99a31f;
+  border-radius: 0.5rem;
+}
+
+.contactProfile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+}
+
+.contactQuote {
+  display: inline-block;
+  color: #8f99a3;
+  width: 10rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9rem;
+}
+
+.sendMsgInput {
+  background-color: #1e1f22;
+}
+
+.sendMsgInputBar {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+.conversation {
+  position: relative;
+  height: 30rem;
+  overflow-y: scroll;
+}
+
+.conversation:hover::-webkit-scrollbar {
+  display: block;
+  border: none;
+  outline: none;
+}
+
+.msg {
+  padding: 0.7rem;
+  max-width: 45%;
+}
+
+.sendMsg {
+  background-color: #6e3aff;
+  color: white;
+  align-self: flex-end;
+}
+
+.receivedMsg {
+  background-color: #1e1f22;
+  color: #bdc4cbf5;
+  align-self: flex-start;
+  border: #8f99a348 0.1px solid;
+}
+
+/* Logout */
+.logout {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  color: #bdc4cbf5;
+  cursor: pointer;
+}
+
+.logout:hover {
+  color: white;
+}
