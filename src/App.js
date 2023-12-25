@@ -1,7 +1,12 @@
 // ******** Imports ******** //
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -12,33 +17,29 @@ function App() {
     setNotify(message);
   };
 
+  const routes = createRoutesFromElements(
+    <>
+      <Route
+        path="/"
+        element={
+          <Login notify={notify} handleNotification={handleNotification} />
+        }
+      />
+      <Route
+        path="/dashboard"
+        element={
+          <Dashboard notify={notify} handleNotification={handleNotification} />
+        }
+      />
+    </>
+  );
+
+  const router = createBrowserRouter(routes);
+
   return (
     <>
       <div className="main">
-        <BrowserRouter
-          basename={"https://dhanashrirandive06.github.io/react-chatapp/"}
-        >
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Login
-                  notify={notify}
-                  handleNotification={handleNotification}
-                />
-              }
-            />
-            <Route
-              path="/dashboard"
-              element={
-                <Dashboard
-                  notify={notify}
-                  handleNotification={handleNotification}
-                />
-              }
-            />
-          </Routes>
-        </BrowserRouter>
+        <RouterProvider router={router} />
       </div>
       <ToastContainer />
     </>
