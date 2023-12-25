@@ -1,11 +1,7 @@
 // ******** Imports ******** //
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -16,33 +12,31 @@ function App() {
     setNotify(message);
   };
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      children: [
-        {
-          index: true,
-          element: (
-            <Login notify={notify} handleNotification={handleNotification} />
-          ),
-        },
-        {
-          path: "/dashboard",
-          element: (
-            <Dashboard
-              notify={notify}
-              handleNotification={handleNotification}
-            />
-          ),
-        },
-      ],
-    },
-  ]);
-
   return (
     <>
       <div className="main">
-        <RouterProvider router={router} />
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Login
+                  notify={notify}
+                  handleNotification={handleNotification}
+                />
+              }
+            />
+            <Route
+              path="/dashboard"
+              element={
+                <Dashboard
+                  notify={notify}
+                  handleNotification={handleNotification}
+                />
+              }
+            />
+          </Routes>
+        </BrowserRouter>
       </div>
       <ToastContainer />
     </>
